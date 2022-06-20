@@ -1,3 +1,3 @@
-# Phase 2 Project (Em & Yixin)
+# Phase 3 Project (Em & Yixin)
 
 ## Kiki 
