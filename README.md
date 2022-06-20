@@ -1,3 +1,3 @@
 # Phase 3 Project (Em & Yixin)
 
-## Kiki 
+## Social Media Platform (Name Undecided)
