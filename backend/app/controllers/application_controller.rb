@@ -5,8 +5,16 @@ class ApplicationController < Sinatra::Base
 
   get "/" do
     { message: "Good luck with your project!" }.to_json
+  end
 
-    
+  get "/question" do
+    all_questions = Question.all
+    all_questions.to_json 
+  end
+  
+  get "/question/:id" do
+    questions = Question.find(params[:id])
+    questions.to_json(include: { answers: { include: :likes} })
   end
 
   post "/question" do
@@ -15,7 +23,6 @@ class ApplicationController < Sinatra::Base
     )
     create_question.to_json
   end
-
 
   post "/answer" do
     create_answer = Answer.create(
