@@ -9,5 +9,20 @@ class ApplicationController < Sinatra::Base
     
   end
 
+  post "/question" do
+    create_question = Question.create(
+      question: params[:question]
+    )
+    create_question.to_json
+  end
+
+
+  post "/answer" do
+    create_answer = Answer.create(
+      answer: params[:answer],
+      question_id: params[:question_id]
+    )
+    create_answer.to_json
+  end
 
 end
