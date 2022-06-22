@@ -18,7 +18,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/answers/:id" do
-    answers = Answer.find(params[:id])
+    answers = Question.find(params[:id]).answers
     answers.to_json
   end
   
