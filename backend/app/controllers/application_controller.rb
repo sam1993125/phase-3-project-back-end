@@ -11,10 +11,19 @@ class ApplicationController < Sinatra::Base
     all_questions = Question.all
     all_questions.to_json 
   end
+
+  get "/answer" do
+    all_answers = Answer.all
+    all_answers.to_json 
+  end
+
+  get "/like" do
+     Like.all.to_json
+  end
   
   get "/question/:id" do
     questions = Question.find(params[:id])
-    questions.to_json(include: { answers: { include: :likes} })
+    questions.to_json(include: {answers:{ include: :likes} })
   end
 
   post "/question" do
@@ -30,6 +39,13 @@ class ApplicationController < Sinatra::Base
       question_id: params[:question_id]
     )
     create_answer.to_json
+  end
+
+  #DELETE
+  delete '/question/:id' do
+    question = Question.find(params[:id])
+    question.destroy
+    question.to_json
   end
 
 end
