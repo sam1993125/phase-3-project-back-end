@@ -1,4 +1,9 @@
 class Answer < ActiveRecord::Base
     belongs_to :question
-    has_many :likes, :dependent => :destroy
+    belongs_to :user
+
+    def increase_likes
+        self.likes += 1
+    end 
+
 end
