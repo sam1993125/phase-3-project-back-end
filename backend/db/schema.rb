@@ -14,16 +14,17 @@ ActiveRecord::Schema.define(version: 2022_06_21_143539) do
 
   create_table "answers", force: :cascade do |t|
     t.string "answer"
+    t.integer "likes"
+    t.integer "user_id"
     t.integer "question_id"
-  end
-
-  create_table "likes", force: :cascade do |t|
-    t.integer "like"
-    t.integer "answer_id"
   end
 
   create_table "questions", force: :cascade do |t|
     t.string "question"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
   end
 
 end

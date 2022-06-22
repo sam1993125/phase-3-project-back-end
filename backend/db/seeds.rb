@@ -1,23 +1,23 @@
 puts "🌱 Seeding spices..."
 
 # Seed your database here
-Answer.create(answer: "This is good advice", question_id: 1)
-Answer.create(answer: "This is really good advice", question_id: 2)
-Answer.create(answer: "This is AMAZING advice", question_id: 3)
-Answer.create(answer: "This is the BEST advice", question_id: 4)
-Answer.create(answer: "This is stupid advice", question_id: 5)
+Answer.create(id: 1, answer: "This is good advice", question_id: 1,likes: 2,user_id: 1, )
+Answer.create(id: 2,answer: "This is really good advice", question_id: 2,likes: 3,user_id: 2)
+Answer.create(id: 3,answer: "This is AMAZING advice", question_id: 3,likes: 4,user_id: 3)
+Answer.create(id: 4,answer: "This is the BEST advice", question_id: 4,likes: 5,user_id: 4)
+Answer.create(id: 5,answer: "This is stupid advice", question_id: 5,likes: 6,user_id: 5)
 
-Question.create(question: "How should you load the dishwahs")
-Question.create(question: "Dunkind or Starbucks?")
-Question.create(question: "Homeschool or Public School?")
-Question.create(question: "Mcdonalds or Burger King?")
-Question.create(question: "DO you like your friends boyfriend?")
+Question.create(question: "How should you load the dishwahs",id: 1)
+Question.create(question: "Dunkind or Starbucks?", id: 2)
+Question.create(question: "Homeschool or Public School?", id: 3)
+Question.create(question: "Mcdonalds or Burger King?", id: 4)
+Question.create(question: "DO you like your friends boyfriend?", id: 5)
 
-Like.create(like: 5, answer_id: 1)
-Like.create(like: 20, answer_id: 2)
-Like.create(like: 50, answer_id: 3)
-Like.create(like: 10000, answer_id: 4)
-Like.create(like: 2, answer_id: 5)
+User.create(name: "John", id: 1)
+User.create(name: "Yixin", id: 2)
+User.create(name: "Em",  id: 3)
+User.create(name: "Sally",  id: 4)
+User.create(name: "Harry",  id: 5)
 
 
 puts "✅ Done seeding!"
