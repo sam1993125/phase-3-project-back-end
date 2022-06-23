@@ -9,7 +9,12 @@ class ApplicationController < Sinatra::Base
 
   get "/questions" do
     all_questions = Question.all
-    all_questions.to_json 
+    all_questions.to_json
+  end
+
+  get "/users" do
+    all_users = User.all
+    all_users.to_json
   end
 
   get "/answers" do
