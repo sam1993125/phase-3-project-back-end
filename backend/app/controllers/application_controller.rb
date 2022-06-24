@@ -43,8 +43,6 @@ class ApplicationController < Sinatra::Base
     create_answer = Answer.create(
       answer: params[:answer],
       likes: params[:likes],
-      user_id: params[:user_id],
-      question_id: params[:question_id]
     )
     create_answer.to_json
   end
