@@ -9,7 +9,7 @@ class ApplicationController < Sinatra::Base
 
   get "/questions" do
     all_questions = Question.all
-    all_questions.to_json
+    all_questions.to_json(include: :user )
   end
 
   get "/users" do
@@ -45,6 +45,13 @@ class ApplicationController < Sinatra::Base
       likes: params[:likes],
     )
     create_answer.to_json
+  end
+
+  post "/users" do
+    create_user = User.create(
+      name: params[:name]
+    )
+    create_user.to_json
   end
 
   #PATCH
