@@ -54,10 +54,7 @@ class ApplicationController < Sinatra::Base
   patch "/answers/:id" do
     answer = Answer.find(params[:id])
     answer.update(
-      answer: params[:answer],
-      likes: params[:likes],
-      user_id: params[:user_id],
-      question_id: params[:question_id] 
+      likes: params[:likes]
     )
     answer.to_json
   end
